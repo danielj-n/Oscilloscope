@@ -20,12 +20,12 @@ end entity potADCSPI;
 
 architecture potADCSPIArch of potADCSPI is 
 
-	type SPIControlState is ( 	signalling_beginning, 
-								starting_SPI, 
-								waiting_for_first_SPI_load_in,
-								waiting_to_start_second_transfer, 
-								waiting_for_second_SPI_load_in,
-								waiting_to_end	);
+	type SPIControlState is (	signalling_beginning, 
+					starting_SPI, 
+					waiting_for_first_SPI_load_in,
+					waiting_to_start_second_transfer, 
+					waiting_for_second_SPI_load_in,
+					waiting_to_end	);
 								
 	signal SPI_control_state : SPIControlState;
 	signal SPI_out_status : oscSPIStatus;
@@ -45,13 +45,13 @@ begin
 		
 	SPIIn : entity work.SPIReader(SPIReaderArch)
 		port map (	SPI_in_status,
-					enable_CLOCK,
-					SPI_in_data_in,
-					CLOCK,
-					RESET,
-					SPI_in_data_out,
-					SPI_in_begin,
-					SPI_out_clk	);
+				enable_CLOCK,
+				SPI_in_data_in,
+				CLOCK,
+				RESET,
+				SPI_in_data_out,
+				SPI_in_begin,
+				SPI_out_clk	);
 	
 	
 	SPIControl : process (CLOCK, RESET)
@@ -149,8 +149,5 @@ begin
 	begin
 		SPI_out_clk_out <= SPI_out_clk;
 	end process SPIOutClkOut;
-	
-
-
-
+				
 end architecture potADCSPIArch;
