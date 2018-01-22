@@ -4,13 +4,13 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity SPIReader is
 	port (	status_out : out std_logic; 
-			enable_CLOCK : in std_logic;
-			data_in : in std_logic;
-			CLOCK : in std_logic;
-			RESET : in std_logic;
-			data_out : out std_logic_vector(0 to 7);
-			begin_in : in std_logic;
-			SPI_out_clk_out_in : in std_logic);
+		enable_CLOCK : in std_logic;
+		data_in : in std_logic;
+		CLOCK : in std_logic;
+		RESET : in std_logic;
+		data_out : out std_logic_vector(0 to 7);
+		begin_in : in std_logic;
+		SPI_out_clk_out_in : in std_logic);
 end entity SPIReader;
 
 Architecture SPIReaderArch of SPIReader is
