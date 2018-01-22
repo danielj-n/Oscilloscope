@@ -510,8 +510,8 @@ end architecture pixelRam2Arch;
 
 -- synopsys translate_off
 library MACHXO3L;
-configuration Structure_CON of pixelRam2 is  ------------------AHHHHH I changed Osc_Pixel_ram_2 to pixelRam2
-    for pixelRam2Arch----------------------------------------AHHHHH I changed Structure to pixelRam2Arch
+configuration Structure_CON of pixelRam2 is
+    for pixelRam2Arch
         for all:AND2 use entity MACHXO3L.AND2(V); end for;
         for all:FD1P3DX use entity MACHXO3L.FD1P3DX(V); end for;
         for all:INV use entity MACHXO3L.INV(V); end for;
